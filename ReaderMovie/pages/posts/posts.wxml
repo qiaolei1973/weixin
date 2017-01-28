@@ -1,0 +1,32 @@
+<view>
+  <swiper class='swiper' indicator-dots='true' autoplay='true' interval="5000">
+    <swiper-item>
+      <image src="/images/zhanchangyuan.jpg"></image>
+
+      <!--<icon type="success"></icon>-->
+    </swiper-item>
+    <swiper-item>
+      <image src="/images/youzai1.jpg"></image>
+    </swiper-item>
+    <swiper-item>
+      <image src="/images/youzai2.jpg"></image>
+    </swiper-item>
+  </swiper>
+  <block wx:for="{{posts_key}}" wx:for-item="item" wwx:for-index="index">
+    <view class='post-container'>
+      <view class='item'>
+        <image class='item-avatar' src='{{item.author_img}}'></image>
+        <text>{{date}}</text>
+      </view>
+      <text class='post-title'>{{item.title}}</text>
+      <image class='post-image' src="{{item.content_img}}"></image>
+      <text class='post-content'>{{item.content}}</text>
+      <view class='post-like'>
+        <view class='icon-collection post-icon'></view>
+        <text class='post-like-font'>{{item.view_num}}</text>
+        <view class='icon-great post-icon'></view>
+        <text class='post-like-font'>{{item.collect_num}}</text>
+      </view>
+    </view>
+  </block>
+</view>
