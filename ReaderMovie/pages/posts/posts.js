@@ -1,8 +1,24 @@
 // pages/posts/posts.js
-import {postsData} from '../../data/posts-data';
+import { postsData } from '../../data/posts-data';
 Page({
   data: {
     posts_key: []
+  },
+  onPostTap: e => {
+    const {postId} = e.currentTarget.dataset;
+
+    wx.navigateTo({
+      url: 'post-detail/post-detail?id=' + postId,
+      success: function(res){
+        // success
+      },
+      fail: function() {
+        // fail
+      },
+      complete: function() {
+        // complete
+      }
+    })
   },
   onLoad: function (options) {
     // 页面初始化 options为页面跳转所带来的参数

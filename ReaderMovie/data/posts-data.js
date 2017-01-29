@@ -6,7 +6,12 @@ export const postsData = [
         reading: '112',
         collection: '99',
         avatar: '/images/zhanchangyuan.jpg',
-        imgSrc: '/images/zhanchangyuan.jpg'
+        imgSrc: '/images/zhanchangyuan.jpg',
+        headImgSrc: '/images/zhanchangyuan.jpg',
+        author:'林青依',
+        dateTime:'24小时前',
+        detail:'这里是详细信息，用来展示个用户。',
+        postId: 0
     },
     {
         date: 'Nov 12 2016',
@@ -15,7 +20,12 @@ export const postsData = [
         reading: '122',
         collection: '92',
         avatar: '/images/youzai1.jpg',
-        imgSrc: '/images/youzai1.jpg'
+        imgSrc: '/images/youzai1.jpg',
+        headImgSrc: '/images/youzai1.jpg',
+        author:'林青依',
+        dateTime:'24小时前',
+        detail:'这里是详细信息，用来展示个用户。',
+        postId: 1
     },
     {
         date: 'Jan 03 2017',
@@ -24,6 +34,11 @@ export const postsData = [
         reading: '122',
         collection: '92',
         avatar: '/images/youzai1.jpg',
-        imgSrc: '/images/youzai2.jpg'
+        imgSrc: '/images/youzai2.jpg',
+        headImgSrc: '/images/youzai2.jpg',
+        author:'林青依',
+        dateTime:'24小时前',
+        detail:'这里是详细信息，用来展示个用户。',
+        postId: 2
     }
 ]
