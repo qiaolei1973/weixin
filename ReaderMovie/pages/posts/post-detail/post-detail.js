@@ -4,23 +4,45 @@ Page({
   data: {
 
   },
-  onCollectionTap: e => {
-    console.log(e);
-    const key = wx.getStorageSync('key');
-    this.setData({a:1})
+  onCollectionTap: function (e) {
+    const postsCollected = wx.getStorageSync('postsCollected');
+    const id = this.data.id;
+    let collected = postsCollected[id];
+    collected = !collected;
+    console.log(collected);
+    wx.setStorageSync('postsCollected',
+      Object.assign(
+        postsCollected,
+        { [id]: collected })
+    )
+    this.setData({
+      collected: collected
+    })
   },
   onShareTap: e => {
     const key = wx.getStorageSync('key');
   },
 
   onLoad: function (options) {
+    // wx.clearStorageSync();
     // 生命周期函数--监听页面加载
     const {id} = options;
     const postData = postsData[id];
     this.setData(postData);
+    this.setData({ id });
 
-    wx.setStorageSync('key', "haha");
+    let postsCollected = wx.getStorageSync('postsCollected');
 
+    if (postsCollected) {
+      const collected = postsCollected[id];
+      this.setData({ collected: collected });
+    } else {
+      wx.setStorageSync('postsCollected',
+        {
+          [id]: false
+        }
+      )
+    }
   },
   onReady: function () {
     // 生命周期函数--监听页面初次渲染完成
