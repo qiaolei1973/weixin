@@ -1,4 +1,5 @@
 const {globalData: {doubanBase}} = getApp();
+import { convertToStarsArr } from '../../utils/utils';
 
 Page({
     data: {
@@ -20,7 +21,7 @@ Page({
                 // resolve({ [url]: res });
                 const data = processData(res.data);
                 this.setData({
-                    [key]:data
+                    [key]: data
                 })
 
             },
@@ -28,11 +29,12 @@ Page({
                 // fail
                 // reject(err);
             },
-        }).bind(this);
+        });
         // })
     },
 
     processData: function (data) {
+        console.log(data);
         const {title, subjects} = data;
 
         let temp = {};
@@ -42,15 +44,16 @@ Page({
             const {
                 id,
                 title,
-                rating: { average },
+                rating: { average,stars },
                 images: { large }
             } = item;
-
+            console.log(title,stars);
             return {
                 id,
                 title,
                 average,
-                image: large
+                image: large,
+                stars: convertToStarsArr(stars)
             };
         })
         return temp;
