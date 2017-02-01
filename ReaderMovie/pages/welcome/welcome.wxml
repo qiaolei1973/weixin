@@ -1,6 +1,6 @@
 <view class='container'>
     <image class='user-avatar' src="/images/zhanchangyuan.jpg"></image>
-    <text class='user-name'><text style="color:red">hello</text>,\nworld</text>
+    <text class='user-name'>hello world</text>
     <view class='moto-container' bindtap="onTap">
         <text class='moto'>开启微信小程序</text>
     </view>

@@ -9,15 +9,14 @@ Page({
 
     wx.navigateTo({
       url: 'post-detail/post-detail?id=' + postId,
-      success: function(res){
-        // success
-      },
-      fail: function() {
-        // fail
-      },
-      complete: function() {
-        // complete
-      }
+    })
+  },
+  onSwiperTap: e => {
+    console.log('here');
+    const {postId} = e.target.dataset;
+
+    wx.navigateTo({
+      url: 'post-detail/post-detail?id=' + postId,
     })
   },
   onLoad: function (options) {

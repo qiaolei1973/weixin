@@ -18,6 +18,7 @@
 .user-name {
   margin-top: 100rpx;
   font-weight: bold;
+  font-size: 24px;
 }
 
 .moto-container {

@@ -1,16 +1,15 @@
 <import src="post-item/post-item-template"/>
 <view>
-  <swiper class='swiper' indicator-dots='true' autoplay='true' interval="5000">
+  <swiper bindtap='onSwiperTap' class='swiper' indicator-dots='true' autoplay='true' interval="5000">
     <swiper-item>
-      <image src="/images/zhanchangyuan.jpg"></image>
-
+      <image src="/images/zhanchangyuan.jpg" data-post-id="0"></image>
       <!--<icon type="success"></icon>-->
     </swiper-item>
     <swiper-item>
-      <image src="/images/youzai1.jpg"></image>
+      <image src="/images/youzai1.jpg" data-post-id="1"></image>
     </swiper-item>
     <swiper-item>
-      <image src="/images/youzai2.jpg"></image>
+      <image src="/images/youzai2.jpg" data-post-id="2"></image>
     </swiper-item>
   </swiper>
   <block wx:for="{{posts_key}}" wx:for-item="item" wwx:for-index="index">

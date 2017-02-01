@@ -1,13 +1,15 @@
 <view class="container">
-  <image class="detail-img" src="{{headImgSrc}}"></image>
-  <image class="audio" src="/images/icon/music.png"></image>
+  <image class="detail-img" 
+  src="{{postData.headImgSrc}}"></image>
+  <image class="audio" catchtap="onMusic" 
+  src="{{isPlayMusic? '/images/icon/music-stop.png':'/images/icon/music-start.png'}}"></image>
   <view class='header'>
-    <image src="{{avatar}}" class="detail-avatar"></image>
-    <text class="author">{{author}}</text>
+    <image src="{{postData.avatar}}" class="detail-avatar"></image>
+    <text class="author">{{postData.author}}</text>
     <text class="const-text">发表于</text>
-    <text class="date">{{dateTime}}</text>
+    <text class="date">{{postData.dateTime}}</text>
   </view>
-  <text class="title">{{title}}</text>
+  <text class="title">{{postData.title}}</text>
   <view class="tool">
     <view class="circle-img">
       <image catchtap="onCollectionTap" wx:if="{{collected}}" src="/images/icon/collection.png"></image>
@@ -16,5 +18,5 @@
     </view>
     <view class="horizon"></view>
   </view>
-  <text class="detail">{{detail}}</text>
+  <text class="detail">{{postData.detail}}</text>
 </view>
