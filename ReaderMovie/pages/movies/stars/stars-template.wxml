@@ -1,12 +1,17 @@
 <template name="starsTemplate">
     <view class="stars-container">
     <view class="stars">
-        <image src="/images/icon/star.png"></image>
-        <image src="/images/icon/star.png"></image>
-        <image src="/images/icon/star.png"></image>
-        <image src="/images/icon/star.png"></image>
-        <image src="/images/icon/star.png"></image>
+        <image wx:if="{{average > 1}}" src="/images/icon/star.png"></image>
+        <image wx:else src="/images/icon/chat.png"></image>
+        <image wx:if="{{average > 3}}" src="/images/icon/star.png"></image>
+        <image wx:else src="/images/icon/chat.png"></image>
+        <image wx:if="{{average > 5}}" src="/images/icon/star.png"></image>
+        <image wx:else src="/images/icon/chat.png"></image>
+        <image wx:if="{{average > 7}}" src="/images/icon/star.png"></image>
+        <image wx:else src="/images/icon/chat.png"></image>
+        <image wx:if="{{average > 9}}" src="/images/icon/star.png"></image>
+        <image wx:else src="/images/icon/chat.png"></image>
     </view>
-        <text class="stars-score">3.3</text>
+        <text class="stars-score">{{average}}</text>
     </view>
 </template>
